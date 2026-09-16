@@ -87,7 +87,7 @@
     background: var(--surface);
     border: 1px solid var(--border-ui);
     border-radius: 6px;
-    padding: 8px 16px;
+    padding: 8px 12px;
   }
 
   .radio-group label {
@@ -99,6 +99,10 @@
     color: var(--text-main);
     font-size: 16px;
     white-space: nowrap;
+  }
+
+  input[type="radio"] {
+    accent-color: var(--accent);
   }
 
   .note-line {
@@ -175,6 +179,8 @@
 
   .card-grid {
     display: grid;
+    width: calc(182 * var(--mm));
+    height: calc(275 * var(--mm));
     grid-template-columns: repeat(2, calc(91 * var(--mm)));
     grid-template-rows: repeat(5, calc(55 * var(--mm)));
     border-top: 1px solid var(--cut-line);
@@ -434,7 +440,7 @@
     }
 
     if (face === 'back') {
-      var lines = notesRaw.split(/\r\n|\r|\n/);
+      var lines = notesRaw.replace(/[\r\n]+$/, '').split(/\r\n|\r|\n/);
       var tooManyLines = lines.length > 4;
       var tooLongLine = false;
       for (var i = 0; i < lines.length; i++) {
@@ -476,7 +482,7 @@
       var stampGridHtml = buildStampGridHtml(count);
       cardHtml = buildFrontCardHtml(name, reward, stampGridHtml);
     } else {
-      var noteLines = notesRaw.split(/\r\n|\r|\n/);
+      var noteLines = notesRaw.replace(/[\r\n]+$/, '').split(/\r\n|\r|\n/);
       cardHtml = buildBackCardHtml(noteLines);
     }
 
