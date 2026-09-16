@@ -304,6 +304,27 @@
       margin: 0;
     }
   }
+
+  /* 運営者表記フッタ。ツール本体の配色に依存させず自己完結させる。 */
+  .mw-footer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0 0;
+    padding: 16px;
+    background: #F7F7F8;
+    border: 1px solid #D8D8DC;
+    border-radius: 6px;
+    color: #3A3A3E;
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+  .mw-footer p { margin: 0 0 6px; }
+  .mw-footer p:last-child { margin-bottom: 0; }
+  .mw-footer a { color: #0B5AA6; }
 </style>
 </head>
 <body>
@@ -352,6 +373,13 @@
   </div>
 
   <button id="printBtn" type="button">印刷する</button>
+
+  <footer class="mw-footer">
+    <p>みちAIワークス（MICHI AI WORKS）／代表 田中　泉</p>
+    <p>運営: <a href="https://michi-portfolio.vercel.app/" rel="noopener">みちAIワークス 公式サイト</a>（https://michi-portfolio.vercel.app/ ）／ お問い合わせ: <a href="mailto:nncf123nncf@gmail.com">nncf123nncf@gmail.com</a></p>
+    <p>このツールはブラウザの中だけで動きます。入力した内容の送信・保存・収集は一切行いません。</p>
+    <p>ログイン・会員登録・パスワードの入力を求めることはありません。</p>
+  </footer>
 </main>
 
 <script>
